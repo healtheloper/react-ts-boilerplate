@@ -1,7 +1,9 @@
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 
 dotenv.config();
@@ -13,11 +15,11 @@ const PORT = 3000;
 const getPublicUrl = () => {
   const envPublicUrl = process.env.PUBLIC_URL;
   if (envPublicUrl) {
-    return envPublicUrl.endsWith('/') ? envPublicUrl : envPublicUrl + '/';
+    return envPublicUrl.endsWith('/') ? envPublicUrl : `${envPublicUrl}/`;
   }
-  const homepage = require('./package.json').homepage;
+  const { homepage } = require('./package.json');
   if (homepage) {
-    return homepage.endsWith('/') ? homepage : homepage + '/';
+    return homepage.endsWith('/') ? homepage : `${homepage}/`;
   }
   return '/';
 };
@@ -31,6 +33,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+      '@components': path.resolve(__dirname, 'src/components'),
+    },
   },
   module: {
     rules: [
