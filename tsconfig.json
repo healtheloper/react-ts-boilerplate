@@ -14,16 +14,7 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@constants/*": ["src/constants/*"],
-      "@style/*": ["src/style/*"],
-      "@pages/*": ["src/pages/*"],
-      "@contexts/*": ["src/contexts/*"],
-      "@server/*": ["src/server/*"],
-      "@types/*": ["src/types/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@type/*": ["src/type/*"],
-      "@util/*": ["src/util/*"]
+      "@components/*": ["src/components/*"]
     }
   },
   "include": ["src", "webpack"]

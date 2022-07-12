@@ -39,14 +39,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
       '@components': path.resolve(__dirname, '..', 'src/components'),
-      '@constants': path.resolve(__dirname, '..', 'src/constants'),
-      '@style': path.resolve(__dirname, '..', 'src/style'),
-      '@pages': path.resolve(__dirname, '..', 'src/pages'),
-      '@contexts': path.resolve(__dirname, '..', 'src/contexts'),
-      '@server': path.resolve(__dirname, '..', 'src/server'),
-      '@hooks': path.resolve(__dirname, '..', 'src/hooks'),
-      '@type': path.resolve(__dirname, '..', 'src/type'),
-      '@util': path.resolve(__dirname, '..', 'src/util'),
     },
   },
   module: {
