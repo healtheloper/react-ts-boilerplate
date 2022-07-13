@@ -1,9 +1,14 @@
-export default function Todos() {
-  return (
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
-  );
-}
+import Todo, { TodoType } from '@components/Todo';
+
+const Todos: React.FC<{
+  todos: TodoType[];
+  onClickDeleteTodo: (todoId: number) => void;
+}> = ({ todos, onClickDeleteTodo }) => (
+  <ul>
+    {todos.map((todo) => (
+      <Todo todo={todo} onClickDeleteTodo={onClickDeleteTodo} />
+    ))}
+  </ul>
+);
+
+export default Todos;
