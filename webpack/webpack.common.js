@@ -9,6 +9,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const webpack = require('webpack');
 
+const aliases = require('../aliases');
+
 dotenv.config();
 
 const getPublicUrl = () => {
@@ -37,9 +39,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    alias: {
-      '@components': path.resolve(__dirname, '..', 'src/components'),
-    },
+    alias: aliases.webpack,
   },
   module: {
     rules: [
