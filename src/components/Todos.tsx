@@ -6,7 +6,7 @@ const Todos: React.FC<{
 }> = ({ todos, onClickDeleteTodo }) => (
   <ul>
     {todos.map((todo) => (
-      <Todo todo={todo} onClickDeleteTodo={onClickDeleteTodo} />
+      <Todo key={todo.id} todo={todo} onClickDeleteTodo={onClickDeleteTodo} />
     ))}
   </ul>
 );
